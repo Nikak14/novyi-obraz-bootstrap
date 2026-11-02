@@ -64,6 +64,19 @@ img { display: block; width: 100%; }
 .text-link { display: inline-flex; gap: 14px; align-items: baseline; color: var(--accent); text-decoration-color: currentColor; text-underline-offset: 6px; font-size: 17px; }
 .text-link:hover { color: #e0ffbd; }
 
+.featured-services { background: var(--paper); color: var(--ink-dark); }
+.featured-services__note { max-width: 28ch; margin: 0; font-size: 17px; }
+.featured-services__grid { margin-top: 70px; }
+.featured-service img { aspect-ratio: 4 / 5; object-fit: cover; }
+.featured-service h3 { margin: 22px 0 8px; font-size: 28px; font-weight: 500; }
+.featured-service p { max-width: 27ch; margin-bottom: 18px; font-size: 17px; }
+.featured-service .text-link { color: var(--ink-dark); }
+.featured-service .text-link:hover { color: #426d43; }
+@media (min-width: 992px) {
+  .featured-services__grid > div:nth-child(2) { margin-top: 80px; }
+  .featured-services__grid > div:nth-child(3) { margin-top: 160px; }
+}
+
 .approach { background: var(--forest-soft); }
 .approach__lead { max-width: 33ch; margin: 0; font-size: clamp(24px, 2.5vw, 35px); line-height: 1.2; }
 .approach__detail { max-width: 38ch; margin: 22px 0 0; color: var(--muted); font-size: 18px; }
