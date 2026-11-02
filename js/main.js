@@ -15,6 +15,14 @@ if (bookingForm) {
 
   dateInput.addEventListener('change', () => dateInput.setCustomValidity(''));
 
+  document.querySelectorAll('[data-service]').forEach((link) => {
+    link.addEventListener('click', () => {
+      bookingForm.querySelector('#service').value = link.dataset.service;
+      bookingForm.classList.remove('was-validated');
+      result.hidden = true;
+    });
+  });
+
   bookingForm.addEventListener('submit', (event) => {
     event.preventDefault();
     result.hidden = true;
@@ -57,7 +65,7 @@ document.querySelectorAll('#mainNavbar .nav-link').forEach((link) => {
 });
 
 if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
-  const targets = document.querySelectorAll('.section-space .section-title, .intro__statement, .intro__image, .service-list, .services__image, .approach__lead, .approach__points > div, .masters__image, .master-entry, .price-item, .looks figure, .booking form');
+  const targets = document.querySelectorAll('.section-space .section-title, .intro__statement, .intro__image, .service-list, .services__image, .featured-service, .approach__lead, .approach__points > div, .masters__image, .master-entry, .price-item, .looks figure, .booking form');
   targets.forEach((target) => target.classList.add('reveal'));
   document.documentElement.classList.add('has-motion');
   const observer = new IntersectionObserver((entries) => {
